@@ -14,7 +14,7 @@ find_package(GTest REQUIRED)
 target_link_libraries(sample GTest::gtest)
 ```
 
-编译项目命令如下：
+编译项目需要设置GTest_DIR路径：
 
 ```
 $ mkdir build
