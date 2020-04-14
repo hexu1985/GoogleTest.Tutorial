@@ -8,7 +8,7 @@ LDPATH = -L$(HOME)/local/lib
 VPATH = 
 
 SOURCES = $(shell ls *.cpp)
-PROGS = test
+PROGS = sample
 
 all: $(PROGS)
 	@echo "PROGS = $(PROGS)" 
