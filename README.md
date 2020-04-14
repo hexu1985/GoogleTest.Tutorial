@@ -1,10 +1,6 @@
-## GoogleTest Tutorial
+# GoogleTest Tutorial
 
-### Table of contents
+## Table of contents
 
-#### 环境配置
-
-- [googletest编译安装](chapter-01/README.md)
-
-#### 使用断言
+### [Chapter1: 环境配置](chapter-01/README.md)
 
