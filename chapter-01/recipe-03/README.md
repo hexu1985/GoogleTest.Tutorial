@@ -24,3 +24,10 @@ $ cmake -DGTest_DIR=~/local/lib/cmake/GTest \
 $ VERBOSE=1 cmake --build . 
 ```
 
+或者用更简单的方式，只需两行命令：
+
+```
+$ cmake -Bbuild -H. -DGTest_DIR=~/local/lib/cmake/GTest
+$ cmake --build build
+```
+
