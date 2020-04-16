@@ -22,6 +22,10 @@
 - [8. 浮点型检查](chapter-02/recipe-08/README.md)
 - [9. 类型检查](chapter-02/recipe-09/README.md)
 
+### [Chapter3: 事件机制](chapter-03/README.md)
+
+- [1. gtest事件机制简介](chapter-03/recipe-01/README.md)
+
 ### 参考文档
 
 https://www.cnblogs.com/coderzh/archive/2009/04/06/1426755.html
