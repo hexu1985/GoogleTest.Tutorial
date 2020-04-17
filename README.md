@@ -25,6 +25,9 @@
 ### [Chapter3: 事件机制](chapter-03/README.md)
 
 - [1. gtest事件机制简介](chapter-03/recipe-01/README.md)
+- [2. 全局事件](chapter-03/recipe-02/README.md)
+- [3. TestSuite事件](chapter-03/recipe-03/README.md)
+- [4. TestCase事件](chapter-03/recipe-04/README.md)
 
 ### 参考文档
 

@@ -13,24 +13,22 @@ int g_count = 0;
 
 class MyStringTest : public testing::Test {
 protected:
-    static void SetUpTestCase() {
-        std::cout << "MyStringTest SetUpTestCase" << std::endl;
-        s_count = ++g_count;
+    virtual void SetUp()
+    {
+        std::cout << "MyStringTest SetUp" << std::endl;
+        m_count = ++g_count;
+    }
+    virtual void TearDown()
+    {
+        std::cout << "MyStringTest TearDown" << std::endl;
     }
 
-    static void TearDownTestCase() {
-        std::cout << "MyStringTest TearDownTestCase" << std::endl;
-    }
-
-    // Some expensive resource shared by all tests.
-    static int s_count;
+    int m_count;
 };
-
-int MyStringTest::s_count = 0; 
 
 // Tests the default c'tor.  
 TEST_F(MyStringTest, DefaultConstructor) {  
-    std::cout << __func__ << ", s_count: " << s_count << std::endl;
+    std::cout << __func__ << ", m_count: " << m_count << std::endl;
     const MyString s;  
   
     // Asserts that s.c_string() returns NULL.  
@@ -58,7 +56,7 @@ const char kHelloString[] = "Hello, world!";
   
 // Tests the c'tor that accepts a C string.  
 TEST_F(MyStringTest, ConstructorFromCString) {  
-    std::cout << __func__ << ", s_count: " << s_count << std::endl;
+    std::cout << __func__ << ", m_count: " << m_count << std::endl;
     const MyString s(kHelloString);  
     EXPECT_EQ(0, strcmp(s.c_string(), kHelloString));  
     EXPECT_EQ(sizeof(kHelloString)/sizeof(kHelloString[0]) - 1,  
@@ -67,7 +65,7 @@ TEST_F(MyStringTest, ConstructorFromCString) {
   
 // Tests the copy c'tor.  
 TEST_F(MyStringTest, CopyConstructor) {  
-    std::cout << __func__ << ", s_count: " << s_count << std::endl;
+    std::cout << __func__ << ", m_count: " << m_count << std::endl;
     const MyString s1(kHelloString);  
     const MyString s2 = s1;  
     EXPECT_EQ(0, strcmp(s2.c_string(), kHelloString));  
@@ -75,7 +73,7 @@ TEST_F(MyStringTest, CopyConstructor) {
   
 // Tests the Set method.  
 TEST_F(MyStringTest, Set) {  
-    std::cout << __func__ << ", s_count: " << s_count << std::endl;
+    std::cout << __func__ << ", m_count: " << m_count << std::endl;
     MyString s;  
   
     s.Set(kHelloString);  
