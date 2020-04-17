@@ -9,8 +9,27 @@
 // your tests organized.  You may also throw in additional tests as  
 // needed.  
   
+class MyStringTest : public testing::Test {
+protected:
+    static void SetUpTestCase() {
+        std::cout << "MyStringTest SetUpTestCase" << std::endl;
+        shared_resource_ = new int;
+    }
+
+    static void TearDownTestCase() {
+        std::cout << "MyStringTest TearDownTestCase" << std::endl;
+        delete shared_resource_;
+        shared_resource_ = nullptr;
+    }
+
+    // Some expensive resource shared by all tests.
+    static int *shared_resource_;
+};
+
+int *MyStringTest::shared_resource_ = nullptr; 
+
 // Tests the default c'tor.  
-TEST(MyString, DefaultConstructor) {  
+TEST_F(MyStringTest, DefaultConstructor) {  
     const MyString s;  
   
     // Asserts that s.c_string() returns NULL.  
@@ -37,7 +56,7 @@ TEST(MyString, DefaultConstructor) {
 const char kHelloString[] = "Hello, world!";  
   
 // Tests the c'tor that accepts a C string.  
-TEST(MyString, ConstructorFromCString) {  
+TEST_F(MyStringTest, ConstructorFromCString) {  
     const MyString s(kHelloString);  
     EXPECT_EQ(0, strcmp(s.c_string(), kHelloString));  
     EXPECT_EQ(sizeof(kHelloString)/sizeof(kHelloString[0]) - 1,  
@@ -45,14 +64,14 @@ TEST(MyString, ConstructorFromCString) {
 }  
   
 // Tests the copy c'tor.  
-TEST(MyString, CopyConstructor) {  
+TEST_F(MyStringTest, CopyConstructor) {  
     const MyString s1(kHelloString);  
     const MyString s2 = s1;  
     EXPECT_EQ(0, strcmp(s2.c_string(), kHelloString));  
 }  
   
 // Tests the Set method.  
-TEST(MyString, Set) {  
+TEST_F(MyStringTest, Set) {  
     MyString s;  
   
     s.Set(kHelloString);  
