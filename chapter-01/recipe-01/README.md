@@ -11,4 +11,13 @@ $ cmake -DCMAKE_INSTALL_PREFIX=~/local ..
 $ cmake --build . --target install
 ```
 
+或者更简单的方式
+
+```
+$ git clone https://github.com/google/googletest.git googletest
+$ cd googletest
+$ cmake -H. -Bbuild -DCMAKE_INSTALL_PREFIX=~/local
+$ cmake --build build --target install
+```
+
 CMAKE_INSTALL_PREFIX指定安装目录前缀，可能需要sudo权限执行install命令
