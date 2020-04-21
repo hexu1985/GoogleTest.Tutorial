@@ -29,6 +29,12 @@
 - [3. TestSuite事件](chapter-03/recipe-03/README.md)
 - [4. TestCase事件](chapter-03/recipe-04/README.md)
 
+### [Chapter 4: 参数化](chapter-04/README.md)
+
+- [1. gtest参数化简介](chapter-04/recipe-01/README.md)
+- [2. 参数化测试](chapter-04/recipe-02/README.md)
+- [3. 类型参数化](chapter-04/recipe-03/README.md)
+
 ### 参考文档
 
 https://www.cnblogs.com/coderzh/archive/2009/04/06/1426755.html
