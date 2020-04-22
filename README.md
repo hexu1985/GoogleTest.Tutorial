@@ -35,6 +35,13 @@
 - [2. 参数化测试](chapter-04/recipe-02/README.md)
 - [3. 类型参数化](chapter-04/recipe-03/README.md)
 
+### [Chapter 5: 运行参数]
+
+- [1. gtest运行参数简介](chapter-05/recipe-01/README.md)
+- [2. 运行参数列表](chapter-05/recipe-02/README.md)
+
 ### 参考文档
 
-https://www.cnblogs.com/coderzh/archive/2009/04/06/1426755.html
+<https://www.cnblogs.com/coderzh/archive/2009/04/06/1426755.html>
+
+<http://anadoxin.org/blog/type-parametrized-unit-testing-in-gtest.html>
