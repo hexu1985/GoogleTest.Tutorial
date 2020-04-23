@@ -37,6 +37,12 @@
 
 ### [Chapter 5: 死亡测试](chapter-05/README.md)
 
+- [1. gtest死亡测试简介](chapter-05/recipe-01/README.md)
+- [2. \*\_DEATH(statement, regex)](chapter-05/recipe-02/README.md)
+- [3. \*\_EXIT(statement, predicate, regex)](chapter-05/recipe-03/README.md)
+- [4. \*\_DEBUG_DEATH(statement, predicate, regex)](chapter-05/recipe-04/README.md)
+- [5. 死亡测试运行方式](chapter-05/recipe-05/README.md)
+
 ### [Chapter 6: 运行参数](chapter-06/README.md)
 
 - [1. gtest运行参数简介](chapter-06/recipe-01/README.md)
