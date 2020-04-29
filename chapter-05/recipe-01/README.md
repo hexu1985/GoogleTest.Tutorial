@@ -9,3 +9,18 @@ gtest的死亡测试能做到在一个安全的环境下执行崩溃的测试案
 | ----------------------------------------- | ----------------------------------------- | -------- |
 | ASSERT_DEATH(statement, regex);           | EXPECT_DEATH(statement, regex);           | statement crashes with the given error |
 | ASSERT_EXIT(statement, predicate, regex); | EXPECT_EXIT(statement, predicate, regex); | statement exits with the given error and its exit code matches predicate |
+
+示例代码如下：
+
+```cpp
+void Foo()
+{
+    int *pInt = nullptr;
+    *pInt = 42 ;
+}
+
+TEST(FooDeathTest, Demo)
+{
+    EXPECT_DEATH(Foo(), "");
+}
+```
