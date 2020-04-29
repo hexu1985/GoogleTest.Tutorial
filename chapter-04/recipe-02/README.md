@@ -6,14 +6,13 @@
 
 #### 2. 告诉gtest你拿到参数的值后，具体做些什么样的测试
 
-这里，我们要使用一个新的宏（嗯，挺兴奋的）：TEST_P，关于这个"P"的含义，Google给出的答案非常幽默，
-就是说你可以理解为”parameterized" 或者 "pattern"。
-在TEST_P宏里，使用GetParam()获取当前的参数的具体值。
+这里，我们要使用一个新的宏：`TEST_P`，
+在`TEST_P`宏里，使用GetParam()获取当前的参数的具体值。
 
 #### 3. 告诉gtest你想要测试的参数范围是什么
 
-使用INSTANTIATE_TEST_SUITE_P（在旧版本中使用INSTANTIATE_TEST_CASE_P宏，不过已经废弃）这宏来告诉gtest你要测试的参数范围：
-INSTANTIATE_TEST_SUITE_P(InstantiationName, FooTest, Values("meeny", "miny", "moe"));
+使用`INSTANTIATE_TEST_SUITE_P`（在旧版本中使用`INSTANTIATE_TEST_CASE_P`宏，不过已经废弃）这宏来告诉gtest你要测试的参数范围：
+`INSTANTIATE_TEST_SUITE_P`(InstantiationName, FooTest, Values("meeny", "miny", "moe"));
 
 第一个参数是testsuite的前缀，可以任意取。
 
