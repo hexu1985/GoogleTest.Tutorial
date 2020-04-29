@@ -13,7 +13,7 @@ class MyStringTest : public testing::Test {
 protected:
     static void SetUpTestCase() {
         std::cout << "MyStringTest SetUpTestCase" << std::endl;
-        s_count = ++g_count;
+        s_count++; 
     }
 
     static void TearDownTestCase() {
@@ -23,6 +23,8 @@ protected:
     // Some expensive resource shared by all tests.
     static int s_count;
 };
+
+int MyStringTest::s_count = 0; 
 ```
 
 在编写测试案例时，我们需要使用TEST_F这个宏，第一个参数必须是我们上面类的名字，代表一个TestSuite。

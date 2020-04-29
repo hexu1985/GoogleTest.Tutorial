@@ -9,13 +9,11 @@
 // your tests organized.  You may also throw in additional tests as  
 // needed.  
   
-int g_count = 0;
-
 class MyStringTest : public testing::Test {
 protected:
     static void SetUpTestCase() {
         std::cout << "MyStringTest SetUpTestCase" << std::endl;
-        s_count = ++g_count;
+        s_count++; 
     }
 
     static void TearDownTestCase() {

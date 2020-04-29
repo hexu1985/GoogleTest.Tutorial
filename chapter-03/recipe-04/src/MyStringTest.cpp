@@ -9,25 +9,29 @@
 // your tests organized.  You may also throw in additional tests as  
 // needed.  
   
-int g_count = 0;
-
 class MyStringTest : public testing::Test {
 protected:
     virtual void SetUp()
     {
         std::cout << "MyStringTest SetUp" << std::endl;
-        m_count = ++g_count;
+        s_count++;
+        m_count++; 
     }
     virtual void TearDown()
     {
         std::cout << "MyStringTest TearDown" << std::endl;
     }
 
-    int m_count;
+    // Some expensive resource shared by all tests.
+    static int s_count;
+    int m_count = 0;
 };
+
+int MyStringTest::s_count = 0; 
 
 // Tests the default c'tor.  
 TEST_F(MyStringTest, DefaultConstructor) {  
+    std::cout << __func__ << ", s_count: " << s_count << std::endl;
     std::cout << __func__ << ", m_count: " << m_count << std::endl;
     const MyString s;  
   
@@ -56,6 +60,7 @@ const char kHelloString[] = "Hello, world!";
   
 // Tests the c'tor that accepts a C string.  
 TEST_F(MyStringTest, ConstructorFromCString) {  
+    std::cout << __func__ << ", s_count: " << s_count << std::endl;
     std::cout << __func__ << ", m_count: " << m_count << std::endl;
     const MyString s(kHelloString);  
     EXPECT_EQ(0, strcmp(s.c_string(), kHelloString));  
@@ -65,6 +70,7 @@ TEST_F(MyStringTest, ConstructorFromCString) {
   
 // Tests the copy c'tor.  
 TEST_F(MyStringTest, CopyConstructor) {  
+    std::cout << __func__ << ", s_count: " << s_count << std::endl;
     std::cout << __func__ << ", m_count: " << m_count << std::endl;
     const MyString s1(kHelloString);  
     const MyString s2 = s1;  
@@ -73,6 +79,7 @@ TEST_F(MyStringTest, CopyConstructor) {
   
 // Tests the Set method.  
 TEST_F(MyStringTest, Set) {  
+    std::cout << __func__ << ", s_count: " << s_count << std::endl;
     std::cout << __func__ << ", m_count: " << m_count << std::endl;
     MyString s;  
   
