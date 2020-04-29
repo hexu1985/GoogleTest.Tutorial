@@ -15,7 +15,7 @@
 
 同时，还可以使用：
 
-```
+```cpp
 EXPECT_PRED_FORMAT2(testing::FloatLE, val1, val2);
 EXPECT_PRED_FORMAT2(testing::DoubleLE, val1, val2);
 ```
