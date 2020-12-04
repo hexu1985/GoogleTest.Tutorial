@@ -1,5 +1,5 @@
 mkdir build
 cd build
-cmake -DGTest_DIR=~/local/lib/cmake/GTest \
+cmake -DGTEST_ROOT=~/local \
     ..
 VERBOSE=1 cmake --build . 
