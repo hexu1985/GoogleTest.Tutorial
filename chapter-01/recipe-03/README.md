@@ -1,4 +1,4 @@
-### 编译项目：CMake，通过find_package
+### 编译项目：通过CMake的find_package
 
 通过find_package查找gtest，并不需要设置include_directories
 
