@@ -10,7 +10,7 @@
 
 #### CMakeLists.txt
 
-需要通过`target_link_libraries`指令指定链接gtest库，而且可能需要依赖-lpthread（linux平台上），例如:
+需要通过`target_link_libraries`指令指定链接gtest库，而且可能需要依赖pthread库（linux平台上），例如:
 ```
 if(MSVC)
   target_link_libraries(sample gtest)
