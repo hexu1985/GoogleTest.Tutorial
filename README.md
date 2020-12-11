@@ -8,7 +8,7 @@
 - [2. 编译项目：手动指定链接gtest库](chapter-01/recipe-02/README.md)
 - [3. 编译项目：通过CMake的find_package](chapter-01/recipe-03/README.md)
 - [4. 编译项目：手动指定链接gtest库（使用gtest提供的main函数）](chapter-01/recipe-04/README.md)
-- [5. 编译项目：CMake，通过find_package（使用gtest提供的main函数）](chapter-01/recipe-05/README.md)
+- [5. 编译项目：通过CMake的find_package（使用gtest提供的main函数）](chapter-01/recipe-05/README.md)
 
 ### [Chapter2: 使用断言](chapter-02/README.md)
 

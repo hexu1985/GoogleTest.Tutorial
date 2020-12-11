@@ -3,24 +3,28 @@
 通过find_package查找gtest，并不需要设置include_directories
 
 ```
-# 可能需要删除cmake自带的FindGTest.cmake
-# 路径是/usr/share/cmake-x.y/Modules
 find_package(GTest REQUIRED)
 ```
 
 通过target_link_libraries链接gtest_main库，并不需要设置link_directories
 
 ```
-target_link_libraries(sample GTest::gtest_main)
+target_link_libraries(sample GTest::Main)
 ```
 
-编译项目需要设置GTest_DIR路径：
+编译项目需要设置GTEST_ROOT路径：
 
 ```
 $ mkdir build
 $ cd build
-$ cmake -DGTest_DIR=~/local/lib/cmake/GTest \
+$ cmake -DGTest_DIR=~/local \
     ..
 $ VERBOSE=1 cmake --build . 
 ```
 
+或者用更简单的方式，只需两行命令：
+
+```
+$ cmake -Bbuild -H. -DGTEST_ROOT=~/local
+$ cmake --build build
+```
