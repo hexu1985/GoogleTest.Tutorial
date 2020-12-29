@@ -52,4 +52,3 @@
 
 <https://www.cnblogs.com/coderzh/archive/2009/04/06/1426755.html>
 
-<http://anadoxin.org/blog/type-parametrized-unit-testing-in-gtest.html>
