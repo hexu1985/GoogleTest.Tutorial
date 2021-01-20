@@ -9,7 +9,7 @@ find_package(GTest REQUIRED)
 通过target_link_libraries链接gtest库，并不需要设置link_directories
 
 ```
-target_link_libraries(sample GTest::GTest) # 旧版本FindGTest.cmake里可能是GTest::gtest
+target_link_libraries(sample GTest::gtest) # 有些版本可能需要使用GTest::GTest, 可能跟cmake自带的FindGTest.cmake有关
 ```
 
 编译项目需要设置GTEST_ROOT路径：
