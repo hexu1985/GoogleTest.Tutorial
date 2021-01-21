@@ -1,11 +1,16 @@
 #include <gtest/gtest.h>
 #include <stdlib.h>
+#include <iostream>
 
 int DieInDebugElse12(int* sideeffect) {
+    std::cout << "DieInDebugElse12()" << std::endl;
     if (sideeffect) *sideeffect = 12;
 #ifndef NDEBUG
-    std::cerr << "debug death inside DieInDebugElse12()";
+    std::cout << "debug death inside DieInDebugElse12()" << std::endl;
+    std::cerr << "debug death inside DieInDebugElse12()"; // for EXPECT_DEBUG_DEATH regular expression
     abort();
+#else
+    std::cout << "release inside DieInDebugElse12()" << std::endl;
 #endif  // NDEBUG
     return 12;
 }

@@ -3,7 +3,8 @@
 #include <iostream>
 
 void Foo() {
-	std::cerr << "Fail Foo\n";
+	std::cout << "Fail Foo\n";
+	std::cerr << "Fail Foo\n";  // for EXPECT_EXIT regular expression
 	exit(0);
 }
  

@@ -1,7 +1,7 @@
 
 RM = rm -f
 CXX = g++
-CXXFLAGS = -Wall -g #-DNDEBUG
+CXXFLAGS = -Wall -g -std=c++11 #-DNDEBUG
 INCLUDES = -I$(HOME)/local/include
 LDFLAGS = -lgtest_main -lgtest -lpthread
 LDPATH = -L$(HOME)/local/lib
