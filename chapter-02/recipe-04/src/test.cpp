@@ -8,6 +8,8 @@ TEST(ExplicitTest, Demo)
 
     // FAIL(); // Fatal Assertion，不往下执行该test case。
 
+    ADD_FAILURE_AT("test_file.cpp", 19) << "Sorry again"; // None Fatal Asserton，继续往下执行。
+
     SUCCEED();
 
     std::cout << "after SUCCEED" <<  std::endl;
