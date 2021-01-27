@@ -15,7 +15,7 @@ TEST(StringCmpTest, Demo)
 
     EXPECT_STREQ("CoderZh", pszCoderZh);
     EXPECT_STRNE("CnBlogs", pszCoderZh);
-    EXPECT_STRCASEEQ("coderzh", pszCoderZh);
-    EXPECT_STREQ("coderzh", pszCoderZh);
+    EXPECT_STRCASEEQ("coderzh", pszCoderZh);  // Succeed
+    EXPECT_STREQ("coderzh", pszCoderZh);      // Failure
 }
 ```
