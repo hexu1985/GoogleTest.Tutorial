@@ -34,9 +34,58 @@ TEST(PredicateAssertionTest, Demo)
 
 当失败时，返回错误信息：
 ```
-test.cpp:23: Failure
+test.cpp:29: Failure
 MutuallyPrime(m, n) evaluates to false, where
 m evaluates to 5
 n evaluates to 6
 ```
 
+####使用返回值为 AssertionResult 类型的函数
+
+虽然EXPECT_PRED*()能快速处理多个参数的问题，但是这个语法看起来不是很优美，因为不同的参数个数，你得调用不同的宏，如果多于5个目前还没有办法处理。 而类 ::testing::AssertionResult 可以解决这个问题。
+
+一个AssertionResult对象代表了一个断言结果(不管是SUCCESS或者是FAILURE，都有一个消息)。你可以使用这些工厂方法来创建一个AssertionResult对象。
+```cpp
+namespace testing {
+
+// Returns an AssertionResult object to indicate that an assertion has
+// succeeded.
+AssertionResult AssertionSuccess();
+
+// Returns an AssertionResult object to indicate that an assertion has
+// failed.
+AssertionResult AssertionFailure();
+
+}
+```
+
+通过AssertionResult对象，可以使用流操作符`<<`来输出一些需要的信息。
+在布尔断言中，为了提供更好的更丰富的错误诊断信息，可以构造一个预测函数，返回AssertionResult 代替返回bool：见下例
+```cpp
+::testing::AssertionResult IsEven(int n) {
+    if ((n % 2) == 0)
+        return ::testing::AssertionSuccess();
+    else
+        return ::testing::AssertionFailure() << n << " is odd";
+}
+```
+代替：
+```cpp
+bool IsEven(int n) {
+    return (n % 2) == 0;
+}
+```
+断言`EXPECT_TRUE(IsEven(Fib(4)));`失败的时候，会打印：
+```
+test.cpp:63: Failure
+Value of: IsEven(Fib(4))
+  Actual: false (3 is odd)
+Expected: true
+```
+而不是简答的打印：
+```
+test.cpp:63: Failure
+Value of: IsEven(Fib(4))
+  Actual: false
+Expected: true
+```
