@@ -4,7 +4,11 @@ TEST(ExplicitTest, Demo)
 {
     ADD_FAILURE() << "Sorry"; // None Fatal Asserton，继续往下执行。
 
-    // FAIL(); // Fatal Assertion，不往下执行该案例。
+    std::cout << "after ADD_FAILURE" <<  std::endl;
+
+    // FAIL(); // Fatal Assertion，不往下执行该test case。
 
     SUCCEED();
+
+    std::cout << "after SUCCEED" <<  std::endl;
 }
