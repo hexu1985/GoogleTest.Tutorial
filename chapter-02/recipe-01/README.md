@@ -11,7 +11,7 @@ TEST(test_suite_name, test_case_name)
 
 在测试函数中gtest提供了断言，断言的宏可以理解为分为两类，一类是ASSERT系列，一类是EXPECT系列。一个直观的解释就是：
 
-1. `ASSERT_*` 系列的断言，当检查点失败时，退出当前函数（注意：并非退出当前test_case，即如果ASSERT只出现在case调用的子函数里，只退出该子函数）。
+1. `ASSERT_*` 系列的断言，当检查点失败时，退出当前函数（注意：并非退出当前test case，即如果`ASSERT_*`只出现在case调用的子函数里，只退出该子函数）。
 
 2. `EXPECT_*` 系列的断言，当检查点失败时，继续往下执行。
 
