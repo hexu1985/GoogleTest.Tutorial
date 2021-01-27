@@ -3,20 +3,10 @@
 
 TEST(StringCmpTest, Demo)
 {
-	char* pszCoderZh = "CoderZh";
-	wchar_t* wszCoderZh = L"CoderZh";
-	std::string strCoderZh = "CoderZh";
-	std::wstring wstrCoderZh = L"CoderZh";
+    char* pszCoderZh = "CoderZh";
 
-	EXPECT_STREQ("CoderZh", pszCoderZh);
-	EXPECT_STREQ(L"CoderZh", wszCoderZh);
-
-	EXPECT_STRNE("CnBlogs", pszCoderZh);
-	EXPECT_STRNE(L"CnBlogs", wszCoderZh);
-
-	EXPECT_STRCASEEQ("coderzh", pszCoderZh);
-	//EXPECT_STRCASEEQ(L"coderzh", wszCoderZh);    不支持
-
-	EXPECT_STREQ("CoderZh", strCoderZh.c_str());
-	EXPECT_STREQ(L"CoderZh", wstrCoderZh.c_str());
+    EXPECT_STREQ("CoderZh", pszCoderZh);
+    EXPECT_STRNE("CnBlogs", pszCoderZh);
+    EXPECT_STRCASEEQ("coderzh", pszCoderZh);
+    EXPECT_STREQ("coderzh", pszCoderZh);
 }
