@@ -1,4 +1,4 @@
-### 类型检查
+### 类型断言
 
 ```cpp
 ::testing::StaticAssertTypeEq<T1, T2>();
