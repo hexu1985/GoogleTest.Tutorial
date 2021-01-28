@@ -12,12 +12,12 @@
 class MyStringTest : public testing::Test {
 protected:
     static void SetUpTestCase() {
-        std::cout << "MyStringTest SetUpTestCase" << std::endl;
+        std::cout << "MyStringTest SetUpTestCase, s_count: " << s_count << std::endl;
         s_count++; 
     }
 
     static void TearDownTestCase() {
-        std::cout << "MyStringTest TearDownTestCase" << std::endl;
+        std::cout << "MyStringTest TearDownTestCase, s_count: " << s_count << std::endl;
     }
 
     // Some expensive resource shared by all tests.
@@ -28,7 +28,8 @@ int MyStringTest::s_count = 0;
 
 // Tests the default c'tor.  
 TEST_F(MyStringTest, DefaultConstructor) {  
-    std::cout << __func__ << ", s_count: " << s_count << std::endl;
+    std::cout << "TEST_F(MyStringTest, DefaultConstructor), s_count: " << s_count << std::endl;
+    s_count++; 
     const MyString s;  
   
     // Asserts that s.c_string() returns NULL.  
@@ -56,7 +57,8 @@ const char kHelloString[] = "Hello, world!";
   
 // Tests the c'tor that accepts a C string.  
 TEST_F(MyStringTest, ConstructorFromCString) {  
-    std::cout << __func__ << ", s_count: " << s_count << std::endl;
+    std::cout << "TEST_F(MyStringTest, ConstructorFromCString), s_count: " << s_count << std::endl;
+    s_count++; 
     const MyString s(kHelloString);  
     EXPECT_EQ(0, strcmp(s.c_string(), kHelloString));  
     EXPECT_EQ(sizeof(kHelloString)/sizeof(kHelloString[0]) - 1,  
@@ -65,7 +67,8 @@ TEST_F(MyStringTest, ConstructorFromCString) {
   
 // Tests the copy c'tor.  
 TEST_F(MyStringTest, CopyConstructor) {  
-    std::cout << __func__ << ", s_count: " << s_count << std::endl;
+    std::cout << "TEST_F(MyStringTest, CopyConstructor), s_count: " << s_count << std::endl;
+    s_count++; 
     const MyString s1(kHelloString);  
     const MyString s2 = s1;  
     EXPECT_EQ(0, strcmp(s2.c_string(), kHelloString));  
@@ -73,7 +76,8 @@ TEST_F(MyStringTest, CopyConstructor) {
   
 // Tests the Set method.  
 TEST_F(MyStringTest, Set) {  
-    std::cout << __func__ << ", s_count: " << s_count << std::endl;
+    std::cout << "TEST_F(MyStringTest, Set), s_count: " << s_count << std::endl;
+    s_count++; 
     MyString s;  
   
     s.Set(kHelloString);  

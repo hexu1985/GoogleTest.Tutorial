@@ -1,10 +1,10 @@
 ### 全局事件
 
-要实现全局事件，必须写一个类，继承testing::Environment类，实现里面的SetUp和TearDown方法。
+要实现全局事件，必须写一个类，继承testing::Environment类，实现(override)里面的SetUp和TearDown方法。
 
-1. SetUp()方法在所有案例执行前执行
+1. SetUp()方法在所有test case执行前执行
 
-2. TearDown()方法在所有案例执行后执行
+2. TearDown()方法在所有test case执行后执行
 
 示例代码如下：
 
