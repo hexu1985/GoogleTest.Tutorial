@@ -23,24 +23,27 @@ TEST(TrivialAssertionTest, Demo)
     EXPECT_TRUE(MutuallyPrime(m, n));
 }
 
+// 使用一个已经存在的布尔型的函数
 TEST(PredicateAssertionTest, Demo)
 {
     int m = 5, n = 6;
     EXPECT_PRED2(MutuallyPrime, m, n);
 }
 
-#if 0
-bool IsEven(int n) 
-{
-    return (n % 2) == 0;
-}
-#else
+
+#if 1
+// 使用返回值为 AssertionResult 类型的函数
 ::testing::AssertionResult IsEven(int n) 
 {
     if ((n % 2) == 0)
         return ::testing::AssertionSuccess();
     else
         return ::testing::AssertionFailure() << n << " is odd";
+}
+#else
+bool IsEven(int n) 
+{
+    return (n % 2) == 0;
 }
 #endif
 
@@ -63,3 +66,17 @@ TEST(AssertionResultTest, Demo)
     EXPECT_TRUE(IsEven(Fib(4)));
 }
 
+testing::AssertionResult AssertFoo(const char* m_expr, const char* n_expr, const char* k_expr, int m, int n, int k) 
+{
+    if (Foo(m, n) == k)
+        return testing::AssertionSuccess();
+    testing::Message msg;
+    msg << m_expr << " and " << n_expr << " 's gcd should be: " << Foo(m, n) << ", not: " << k_expr;
+    return testing::AssertionFailure(msg);
+}
+
+// 使用格式化宏
+TEST(AssertFooTest, HandleFail)
+{
+    EXPECT_PRED_FORMAT3(AssertFoo, 3, 6, 2);
+}
