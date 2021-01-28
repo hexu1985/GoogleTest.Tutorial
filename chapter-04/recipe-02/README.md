@@ -36,7 +36,7 @@ class IsPrimeTest : public::testing::TestWithParam<int>
 // 使用参数化测试，只需要：
 TEST_P(IsPrimeTest, HandleTrueReturn)
 {
-    int n =  GetParam();
+    int n = GetParam();
     EXPECT_TRUE(IsPrime(n));
 }
 ```
@@ -47,9 +47,9 @@ TEST_P(IsPrimeTest, HandleTrueReturn)
 INSTANTIATE_TEST_SUITE_P(InstantiationName, FooTest, Values("meeny", "miny", "moe"));
 ```
 
-第一个参数是testsuite的前缀，可以任意取。
+第一个参数是test suite的前缀，可以任意取。
 
-第二个参数是testsuite的名称，需要和之前定义的参数化的类的名称相同。
+第二个参数是test suite的名称，需要和之前定义的参数化的类的名称相同。
 
 第三个参数是可以理解为参数生成器，上面的例子使用test::Values表示使用括号内的参数。
 

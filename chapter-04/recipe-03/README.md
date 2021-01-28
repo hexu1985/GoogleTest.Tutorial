@@ -81,7 +81,7 @@ TEST(ListContainerTest, ShouldAdd1) {
 
 我们需要做如下几步，将测试转成gtest的参数化类型的测试。
 
-1）首先定义一个模版类，继承testing::Test，然后使用TYPED_TEST_SUITE_P（在旧版本中使用TYPED_TEST_CASE_P宏，不过已经废弃）宏来这个模板类转换成支持类型参数化的testsuite
+1）首先定义一个模版类，继承testing::Test，然后使用TYPED_TEST_SUITE_P（在旧版本中使用TYPED_TEST_CASE_P宏，不过已经废弃）宏来这个模板类转换成支持类型参数化的test suite
 
 示例代码如下：
 
@@ -111,7 +111,7 @@ TYPED_TEST_P(ContainerTest, ShouldAdd1) {
 
 之前的4个测试用例就减少到2个。
 
-3）接着，我们需要注册我们的测试用例，使用REGISTER_TYPED_TEST_SUITE_P（在旧版本中使用REGISTER_TYPED_TEST_CASE_P宏，不过已经废弃）宏，第一个参数是testsuite的名称，后面的参数是test的名称列表
+3）接着，我们需要注册我们的测试用例，使用REGISTER_TYPED_TEST_SUITE_P（在旧版本中使用REGISTER_TYPED_TEST_CASE_P宏，不过已经废弃）宏，第一个参数是test suite的名称，后面的参数是test case的名称列表
 
 示例代码如下：
 
@@ -123,8 +123,8 @@ REGISTER_TYPED_TEST_SUITE_P(ContainerTest,
 );
 ```
 4）接着指定需要的类型列表：通过typedef testing::Types指定类型参数列表，并通过使用INSTANTIATE_TYPED_TEST_SUITE_P（在旧版本中使用INSTANTIATE_TYPED_TEST_CASE_P，不过已经废弃）宏，
-第一个参数是testsuite的前缀，可以任意取。 
-第二个参数是testsuite的名称，需要和之前定义的参数化的类的名称相同。第三个参数是通过typedef testing::Types指定类型参数列表。
+第一个参数是test suite的前缀，可以任意取。 
+第二个参数是test suite的名称，需要和之前定义的参数化的类的名称相同。第三个参数是通过typedef testing::Types指定类型参数列表。
 
 ```cpp
 typedef ::testing::Types<VectorContainer, ListContainer> ContainerTypes;
