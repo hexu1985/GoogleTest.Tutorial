@@ -138,7 +138,3 @@ INSTANTIATE_TYPED_TEST_SUITE_P(ContainerTypesInstantiation, ContainerTest, Conta
 
 第三个参数是通过typedef testing::Types指定类型参数列表。
 
-
-#### 参考
-
-<http://anadoxin.org/blog/type-parametrized-unit-testing-in-gtest.html>

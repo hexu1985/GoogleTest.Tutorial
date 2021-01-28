@@ -49,11 +49,11 @@
 
 ### 参考文档
 
-<https://www.cnblogs.com/coderzh/archive/2009/04/06/1426755.html>
-<https://blog.csdn.net/beichen2012/article/details/52190239>
+- <https://www.cnblogs.com/coderzh/archive/2009/04/06/1426755.html>
+- <https://blog.csdn.net/beichen2012/article/details/52190239>
 
 ### 进阶文档推荐
 
-<https://www.cnblogs.com/coderzh/archive/2010/01/09/beautiful-testcase.html>
-<https://www.cnblogs.com/jycboy/p/gtest_handlingEvent.html>
+- <https://www.cnblogs.com/coderzh/archive/2010/01/09/beautiful-testcase.html>
+- <https://www.cnblogs.com/jycboy/p/gtest_handlingEvent.html>
 
