@@ -43,8 +43,12 @@ TEST_P(IsPrimeTest, HandleTrueReturn)
 
 3）告诉gtest你想要测试的参数范围是什么：使用`INSTANTIATE_TEST_SUITE_P`（在旧版本中使用`INSTANTIATE_TEST_CASE_P`宏，不过已经废弃）这宏来告诉gtest你要测试的参数范围：
 
+示例代码如下：
+
 ```cpp
-INSTANTIATE_TEST_SUITE_P(InstantiationName, FooTest, Values("meeny", "miny", "moe"));
+// 定义参数
+//INSTANTIATE_TEST_CASE_P(TrueReturn, IsPrimeTest, testing::Values(3, 5, 11, 23, 17));
+INSTANTIATE_TEST_SUITE_P(TrueReturn, IsPrimeTest, testing::Values(3, 5, 11, 23, 17));
 ```
 
 第一个参数是test suite的前缀，可以任意取。
@@ -53,13 +57,6 @@ INSTANTIATE_TEST_SUITE_P(InstantiationName, FooTest, Values("meeny", "miny", "mo
 
 第三个参数是可以理解为参数生成器，上面的例子使用test::Values表示使用括号内的参数。
 
-示例代码如下：
-
-```cpp
-// 定义参数
-//INSTANTIATE_TEST_CASE_P(TrueReturn, IsPrimeTest, testing::Values(3, 5, 11, 23, 17));
-INSTANTIATE_TEST_SUITE_P(TrueReturn, IsPrimeTest, testing::Values(3, 5, 11, 23, 17));
-```
 
 4）Google提供了一系列的参数生成的函数：
 

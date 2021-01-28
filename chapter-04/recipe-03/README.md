@@ -123,14 +123,21 @@ REGISTER_TYPED_TEST_SUITE_P(ContainerTest,
 );
 ```
 4）接着指定需要的类型列表：通过typedef testing::Types指定类型参数列表，并通过使用INSTANTIATE_TYPED_TEST_SUITE_P（在旧版本中使用INSTANTIATE_TYPED_TEST_CASE_P，不过已经废弃）宏，
-第一个参数是test suite的前缀，可以任意取。 
-第二个参数是test suite的名称，需要和之前定义的参数化的类的名称相同。第三个参数是通过typedef testing::Types指定类型参数列表。
+
+示例代码如下：
 
 ```cpp
 typedef ::testing::Types<VectorContainer, ListContainer> ContainerTypes;
 //INSTANTIATE_TYPED_TEST_CASE_P(ContainerTypesInstantiation, ContainerTest, ContainerTypes);
 INSTANTIATE_TYPED_TEST_SUITE_P(ContainerTypesInstantiation, ContainerTest, ContainerTypes);
 ```
+
+第一个参数是test suite的前缀，可以任意取。 
+
+第二个参数是test suite的名称，需要和之前定义的参数化的类的名称相同。
+
+第三个参数是通过typedef testing::Types指定类型参数列表。
+
 
 #### 参考
 
