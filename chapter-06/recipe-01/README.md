@@ -15,7 +15,7 @@ gtest提供了三种设置的途径：
 示例代码如下：
 
 ```cpp
-int _tmain(int argc, _TCHAR* argv[])
+int main(int argc, char *argv[])
 {
     testing::GTEST_FLAG(output) = "xml:";
     testing::InitGoogleTest(&argc, argv);
