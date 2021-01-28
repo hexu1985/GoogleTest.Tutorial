@@ -1,13 +1,12 @@
 #include <gtest/gtest.h>
 
-double sum (double a, double b)
-{
-    double res = a+b;
-    return res;
-}
+template <typename T> class FooType {
+public:
+    void Bar() { testing::StaticAssertTypeEq<int, T>(); }
+};
 
-TEST(simpleSum, sumOfFloat)
+TEST(TypeAssertionTest, Demo)
 {
-    // EXPECT_EQ(4.56, sum(0.56, 4.0)); // fail
-	EXPECT_DOUBLE_EQ(4.56, sum(0.56, 4.0));
+    FooType<bool> fooType;
+    fooType.Bar();
 }

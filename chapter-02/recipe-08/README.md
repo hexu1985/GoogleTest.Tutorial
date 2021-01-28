@@ -1,21 +1,20 @@
-### 浮点型检查
+### 类型检查
 
-| **Fatal assertion**                 | **Nonfatal assertion**              | **Verifies**                           |
-| :---------------------------------- | :---------------------------------- | :------------------------------------- |
-| ASSERT_FLOAT_EQ(expected, actual);  | EXPECT_FLOAT_EQ(expected, actual);  | the two float values are almost equal  |
-| ASSERT_DOUBLE_EQ(expected, actual); | EXPECT_DOUBLE_EQ(expected, actual); | the two double values are almost equal |
+类型检查失败时，直接导致代码编不过，
 
+在C++11中，`testing::StaticAssertTypeEq<T1, T2>`等价于`static_assert(std::is_same<T1, T2>::value, "xxx")`
 
-对相近的两个数比较：
-
-| **Fatal assertion**                 | **Nonfatal assertion**              | **Verifies**                                                                 |
-| :---------------------------------- | :---------------------------------- | :--------------------------------------------------------------------------- |
-| ASSERT_NEAR(val1, val2, abs_error); | EXPECT_NEAR(val1, val2, abs_error); | the difference between val1 and val2 doesn't exceed the given absolute error |
- 
-
-同时，还可以使用：
+示例代码如下：
 
 ```cpp
-EXPECT_PRED_FORMAT2(testing::FloatLE, val1, val2);
-EXPECT_PRED_FORMAT2(testing::DoubleLE, val1, val2);
+template <typename T> class FooType {
+public:
+    void Bar() { testing::StaticAssertTypeEq<int, T>(); }
+};
+
+TEST(TypeAssertionTest, Demo)
+{
+    FooType<bool> fooType;
+    fooType.Bar();
+}
 ```

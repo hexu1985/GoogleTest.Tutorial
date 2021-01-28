@@ -6,6 +6,5 @@
 - [4. 显示返回成功或失败](recipe-04/README.md)
 - [5. 异常断言](recipe-05/README.md)
 - [6. 谓词断言Predicate Assertions](recipe-06/README.md)
-- [7. 自定义格式的Predicate Assertions](recipe-07/README.md)
-- [8. 浮点型检查](recipe-08/README.md)
-- [9. 类型检查](recipe-09/README.md)
+- [7. 浮点型检查](recipe-07/README.md)
+- [8. 类型检查](recipe-08/README.md)
