@@ -43,7 +43,7 @@
         <td>
 执行案例时，同时也执行被置为无效的测试案例。关于设置测试案例无效的方法为：
 
-在测试案例名称或测试名称中添加DISABLED前缀，比如：
+在测试案例名称或测试名称中添加DISABLED前缀，默认情况这将使它不能执行，比如：
 
 // Tests that Foo does Abc.  
 TEST(FooTest, DISABLED_DoesAbc) {  }
@@ -52,6 +52,7 @@ class DISABLED_BarTest : public testing::Test {  };
 
 // Tests that Bar does Xyz.  
 TEST_F(DISABLED_BarTest, DoesXyz) {  }
+DISABLED的应用场景：如果你有一个不能立即修复的测试失败，你可以将DISABLED_前缀添加到它的名字中。
         </td>
     </tr>
     <tr>
