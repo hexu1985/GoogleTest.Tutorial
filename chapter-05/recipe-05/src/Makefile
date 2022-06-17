@@ -2,9 +2,9 @@
 RM = rm -f
 CXX = g++
 CXXFLAGS = -Wall -g -std=c++11
-INCLUDES = -I$(HOME)/local/include
-LDFLAGS = -lgtest -lpthread
-LDPATH = -L$(HOME)/local/lib
+INCLUDES = -I$(HOME)/local/googletest/include
+LDFLAGS = -lgtest_main -lgtest -lpthread
+LDPATH = -L$(HOME)/local/googletest/lib
 VPATH = 
 
 SOURCES = $(shell ls *.cpp)
