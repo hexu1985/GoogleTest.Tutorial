@@ -14,7 +14,7 @@ all: $(PROGS)
 	@echo "PROGS = $(PROGS)" 
 
 clean:
-	$(RM) $(PROGS) *.gcno
+	$(RM) $(PROGS) *.gcno *.gcda *.info
 
 $(PROGS): $(SOURCES) $(LIB_SOURCES)
 	$(CXX) -o $@ $(CXXFLAGS) $(INCLUDES) $^ $(LDFLAGS) $(LDPATH)
