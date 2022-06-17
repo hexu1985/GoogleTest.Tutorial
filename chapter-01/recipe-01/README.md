@@ -7,7 +7,7 @@ $ git clone https://github.com/google/googletest.git googletest
 $ cd googletest
 $ mkdir build
 $ cd build
-$ cmake -DCMAKE_INSTALL_PREFIX=~/local ..
+$ cmake -DCMAKE_INSTALL_PREFIX=~/local/googletest ..
 $ cmake --build . --target install
 ```
 
@@ -16,7 +16,7 @@ $ cmake --build . --target install
 ```
 $ git clone https://github.com/google/googletest.git googletest
 $ cd googletest
-$ cmake -H. -Bbuild -DCMAKE_INSTALL_PREFIX=~/local
+$ cmake -H. -Bbuild -DCMAKE_INSTALL_PREFIX=~/local/googletest
 $ cmake --build build --target install
 ```
 

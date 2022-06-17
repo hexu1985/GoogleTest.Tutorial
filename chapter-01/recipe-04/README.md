@@ -31,6 +31,6 @@ link_directories(${gtest_LIB_DIRS})
 
 执行cmake命令时需要通过`-D`手动设定`gtest_INCLUDE_DIRS`和`gtest_LIB_DIRS`变量，例如:
 ```
-cmake -Dgtest_INCLUDE_DIRS=~/local/include \
-	-Dgtest_LIB_DIRS=~/local/lib ..
+cmake -Dgtest_INCLUDE_DIRS=~/local/googletest/include \
+	-Dgtest_LIB_DIRS=~/local/googletest/lib ..
 `

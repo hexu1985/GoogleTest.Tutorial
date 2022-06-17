@@ -17,7 +17,7 @@ target_link_libraries(sample GTest::gtest_main) # 有些版本可能需要使用
 ```
 $ mkdir build
 $ cd build
-$ cmake -DGTest_DIR=~/local \
+$ cmake -DGTest_DIR=~/local/googletest \
     ..
 $ VERBOSE=1 cmake --build . 
 ```
@@ -25,6 +25,6 @@ $ VERBOSE=1 cmake --build .
 或者用更简单的方式，只需两行命令：
 
 ```
-$ cmake -Bbuild -H. -DGTEST_ROOT=~/local
+$ cmake -Bbuild -H. -DGTEST_ROOT=~/local/googletest
 $ cmake --build build
 ```
