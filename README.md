@@ -47,6 +47,11 @@
 - [1. gtest运行参数简介](chapter-06/recipe-01/README.md)
 - [2. 运行参数列表](chapter-06/recipe-02/README.md)
 
+### [Chapter 7: 测试覆盖率统计](chapter-07/README.md)
+
+- [1. 基于lcov统计测试覆盖率](chapter-07/recipe-01/README.md)
+- [2. 基于kcov统计测试覆盖率](chapter-07/recipe-02/README.md)
+
 ### 参考文档
 
 - <https://www.cnblogs.com/coderzh/archive/2009/04/06/1426755.html>
