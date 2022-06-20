@@ -13,6 +13,6 @@ set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS} -fprofile-arcs -ftest-coverage")
 # 路径是/usr/share/cmake-x.y/Modules
 find_package(GTest REQUIRED)
 
-aux_source_directory(. SRC_FILE_LIST)
+aux_source_directory(src SRC_FILE_LIST)
 add_executable(sample ${SRC_FILE_LIST})
 target_link_libraries(sample GTest::gtest)
