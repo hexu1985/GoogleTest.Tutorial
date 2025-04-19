@@ -1,3 +1,3 @@
-cmake -H. -Bbuild 
-cmake --build build --parallel 4
+cmake -S . -B build
+cmake --build build -j 4
 cmake --install build --prefix ~/local/googletest
