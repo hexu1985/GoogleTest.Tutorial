@@ -1,3 +1,3 @@
 cmake -H. -Bbuild \
-    -DGTEST_ROOT="D:\\local\\googletest"
+    -DGTest_ROOT="D:\\local\\googletest"
 cmake --build build

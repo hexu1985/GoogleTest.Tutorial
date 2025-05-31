@@ -12,12 +12,12 @@ find_package(GTest REQUIRED)
 target_link_libraries(sample GTest::gtest) # 有些版本可能需要使用GTest::GTest, 可能跟cmake自带的FindGTest.cmake有关
 ```
 
-编译项目需要设置GTEST_ROOT路径：
+编译项目需要设置GTest_ROOT路径：
 
 ```
 $ mkdir build
 $ cd build
-$ cmake -DGTEST_ROOT=~/local/googletest \
+$ cmake -DGTest_ROOT=~/local/googletest \
     ..
 $ VERBOSE=1 cmake --build . 
 ```
@@ -25,7 +25,7 @@ $ VERBOSE=1 cmake --build .
 或者用更简单的方式，只需两行命令：
 
 ```
-$ cmake -Bbuild -H. -DGTEST_ROOT=~/local/googletest
+$ cmake -Bbuild -H. -DGTest_ROOT=~/local/googletest
 $ cmake --build build
 ```
 
