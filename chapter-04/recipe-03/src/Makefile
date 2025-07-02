@@ -1,7 +1,7 @@
 
 RM = rm -f
 CXX = g++
-CXXFLAGS = -Wall -g -std=c++11
+CXXFLAGS = -Wall -g #-std=c++11
 INCLUDES = -I$(HOME)/local/googletest/include
 LDFLAGS = -lgtest_main -lgtest -lpthread
 LDPATH = -L$(HOME)/local/googletest/lib
