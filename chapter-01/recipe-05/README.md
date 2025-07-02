@@ -25,6 +25,6 @@ $ VERBOSE=1 cmake --build .
 或者用更简单的方式，只需两行命令：
 
 ```
-$ cmake -Bbuild -H. -DGTest_ROOT=~/local/googletest
+$ cmake -Bbuild -H. -DGTest_DIR=~/local/googletest/lib/cmake/GTest
 $ cmake --build build
 ```
